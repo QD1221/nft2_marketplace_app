@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nft2_marketplace_app/ui/components/explore_popular_component.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({Key? key}) : super(key: key);
@@ -24,8 +25,9 @@ class _ExplorePageState extends State<ExplorePage> {
                   child: Text(
                     'Live Auction 🔥',
                     style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
@@ -76,7 +78,6 @@ class _ExplorePageState extends State<ExplorePage> {
                     ),
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: GestureDetector(
@@ -180,35 +181,32 @@ class _ExplorePageState extends State<ExplorePage> {
             ),
           ),
         ),
-        Expanded(child: IndexedStack(
-          index: _tabIndex,
-          children: [
-            Container(
-              color: Colors.blue,
-              child: Center(
-                child: Text('Popular'),
+        Expanded(
+          child: IndexedStack(
+            index: _tabIndex,
+            children: [
+              ExplorePopularComponent(),
+              Container(
+                color: Colors.green,
+                child: Center(
+                  child: Text('On sale'),
+                ),
               ),
-            ),
-            Container(
-              color: Colors.green,
-              child: Center(
-                child: Text('On sale'),
+              Container(
+                color: Colors.red,
+                child: Center(
+                  child: Text('Best sale'),
+                ),
               ),
-            ),
-            Container(
-              color: Colors.red,
-              child: Center(
-                child: Text('Best sale'),
+              Container(
+                color: Colors.orange,
+                child: Center(
+                  child: Text('Newest'),
+                ),
               ),
-            ),
-            Container(
-              color: Colors.orange,
-              child: Center(
-                child: Text('Newest'),
-              ),
-            ),
-          ],
-        ),),
+            ],
+          ),
+        ),
       ],
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nft2_marketplace_app/ui/home_page.dart';
+import 'package:nft2_marketplace_app/ui/pages/home_page.dart';
 
 void main() {
   runApp(MyApp());
